@@ -1,4 +1,6 @@
-# Getting Started with Create React App
+# IETI Laboratorio 3
+
+Daniel Felipe Walteros Trujillo
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
