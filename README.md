@@ -15,21 +15,21 @@ Daniel Felipe Walteros Trujillo
 
     ![](img/start.PNG)
     
-    ![](img/uso1.PNG)
+    ![](img/uso1.jpeg)
     
-4.  Para poder visualizar el acceso a la aplicación primero debes autenticarte, esta autenticación solo se debe hacer una vez. Las credenciales básicas de acceso configuradas son:
+4.  Para poder visualizar tener acceso a la aplicación primero debes autenticarte, esta autenticación solo se debe hacer una vez. Las credenciales básicas de acceso configuradas son:
 
         Email = daniel@gmail.com
 
         Password = 12345
     
-    Una vez haces esto puedes ver el acceso a la aplicación.
+    Una vez haces esto ves lo siguiente.
     
-    ![](img/uso2.PNG)
+    ![](img/uso2.jpeg)
     
-    Este acceso te permite ver lo siguiente:
+    Y haciendo click en la opción de menú obtendras la vista para desconectarte:
     
-    ![](img/uso3.PNG)
+    ![](img/uso3.jpeg)
 
 # Código de Honor
 ------
