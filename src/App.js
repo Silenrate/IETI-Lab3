@@ -7,11 +7,17 @@ const App = () => {
 
     localStorage.setItem("Username", "daniel@gmail.com");
     localStorage.setItem("Password", "12345");
+	
+	let initialLoggedInState = localStorage.getItem("isLoggedIn");
+	if(initialLoggedInState === "false"){
+		initialLoggedInState = false;
+	} else if (initialLoggedInState === "true"){
+		initialLoggedInState = true;
+	}
 
-    const[isLoggedInState,setIsLoggedInState] = useState(true);
-
+    const[isLoggedInState,setIsLoggedInState] = useState(initialLoggedInState);
+	
     const handleSuccessfullyLogin = (e) => {
-        console.log("Logueado");
         setIsLoggedInState(true);
         localStorage.setItem("isLoggedIn", true);
     }
@@ -58,8 +64,7 @@ const App = () => {
 
     return (
         <div className="App">
-            {!isLoggedInState && (<LoginView />)}
-            {isLoggedInState && (<MainView />)}
+            {isLoggedInState ? (<MainView />) : (<LoginView />)}
         </div>
     );
 }
