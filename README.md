@@ -4,6 +4,8 @@ Daniel Felipe Walteros Trujillo
 
 [![Deployed to Heroku](https://www.herokucdn.com/deploy/button.png)](https://walteros-ieti-lab3.herokuapp.com/)
 
+[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://ieti-lab3.azurewebsites.net/)
+
 # Uso
 
 1.  Clonar el repositorio.
