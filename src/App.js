@@ -1,12 +1,18 @@
 import React, { useState } from 'react';
+import {BrowserRouter as Router, Link, Route} from 'react-router-dom';
 import './App.css';
 import {Login} from './components/Login';
 import {Main} from './components/Main';
 
 const App = () => {
 
-    localStorage.setItem("Username", "daniel@gmail.com");
-    localStorage.setItem("Password", "12345");
+    const userData = {
+        username: "daniel@gmail.com",
+        password: "12345"
+    };
+
+    localStorage.setItem("Username", userData.username);
+    localStorage.setItem("Password", userData.password);
 	
 	let initialLoggedInState = localStorage.getItem("isLoggedIn");
 	if(initialLoggedInState === "false"){
@@ -20,6 +26,7 @@ const App = () => {
     const handleSuccessfullyLogin = (e) => {
         setIsLoggedInState(true);
         localStorage.setItem("isLoggedIn", true);
+        window.location.href = "/home";
     }
 
     const handleFailedLogin = (e) => {
@@ -31,6 +38,7 @@ const App = () => {
     const handleLogout = () => {
         setIsLoggedInState(false);
         localStorage.setItem("isLoggedIn", false);
+        window.location.href = "/";
     }
 
     const items = [{
@@ -48,7 +56,7 @@ const App = () => {
             "email": "daniel@gmail.com"
         },
         "status": "Ready",
-        "dueDate": 156464645646
+        "dueDate": 156475645646
         },{
         "description": "Go to the doctor",
         "responsible": {
@@ -56,16 +64,20 @@ const App = () => {
             "email": "daniel@gmail.com"
         },
         "status": "Completed",
-        "dueDate": 156464645646}
+        "dueDate": 158464685646}
     ];
 
     const LoginView = () => (<Login successful={handleSuccessfullyLogin} failed={handleFailedLogin}/>);
-    const MainView = () => (<Main items={items} logout={handleLogout} email={localStorage.getItem("Username")}/>);
+    const MainView = () => (<Main items={items} logout={handleLogout} email={userData.username}/>);
+    const View = isLoggedInState ? MainView : LoginView ;
 
     return (
-        <div className="App">
-            {isLoggedInState ? (<MainView />) : (<LoginView />)}
-        </div>
+        <Router>
+            <div className="App">
+                <Route exact path="/" component={View}/>
+                <Route path="/home" component={View}/>
+            </div>
+        </Router>
     );
 }
 
